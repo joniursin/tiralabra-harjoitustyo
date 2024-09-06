@@ -12,3 +12,5 @@ Vastavirta algoritmin totutus.
 
 5. Mitä teen seuraavaksi?
 Alan kehittämään projektia koodilla luomalla neuroverkko sekä jonkinlaisen selain pohjaisen syöte käyttöliittymän.
+
+Viikolla 1 käytetty aika noin 7 tuntia.
