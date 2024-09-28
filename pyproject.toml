@@ -7,12 +7,14 @@ readme = "README.md"
 packages = [{include = "tiralabra_harjoitustyo"}]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = ">=3.9,<4.0"
 
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.6.1"
 pytest = "^8.3.3"
+pylint = "^3.3.1"
+autopep8 = "^2.3.1"
 
 [build-system]
 requires = ["poetry-core"]
