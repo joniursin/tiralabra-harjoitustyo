@@ -15,7 +15,7 @@ y_test = np.zeros((y.size, 10))
 y_test[np.arange(y.size), y] = 1
 
 nn = Network(784, 100, 10)
-print(nn.biases[1])
+
 print("Training network...")
 for i in range(X_train.shape[0]):
     x = np.array(X_train[i, :].reshape(-1, 1))
