@@ -23,12 +23,12 @@ for i in range(X_train.shape[0]):
     nn.train(x, y, 0.1)
 
 input("Training done, start testing [enter]")
-correct = 0
+CORRECT = 0
 for i in range(X_test.shape[0]):
     x = np.array(X_test[i].reshape(-1, 1))
     predict = nn.feedforward(x)
-    #print("was:", np.argmax(y_test[i]), "predict:", np.argmax(
-        #predict), predict[np.argmax(predict)])
+    # print("was:", np.argmax(y_test[i]), "predict:", np.argmax(
+    # predict), predict[np.argmax(predict)])
     if np.argmax(y_test[i]) == np.argmax(predict):
-        correct += 1
-print("Accuracy", correct/10000)
+        CORRECT += 1
+print("Accuracy", CORRECT/10000)
