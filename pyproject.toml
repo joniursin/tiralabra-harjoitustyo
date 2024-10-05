@@ -8,6 +8,9 @@ packages = [{include = "tiralabra_harjoitustyo"}]
 
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
+numpy = "*"
+idx2numpy = "^1.2.3"
+tk = "^0.1.0"
 
 
 [tool.poetry.group.dev.dependencies]
