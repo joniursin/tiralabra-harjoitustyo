@@ -2,8 +2,10 @@ import numpy as np
 import idx2numpy
 from network import Network
 
+
 def test_network(test_data):
     return nn.feedforward(test_data)
+
 
 X_train = idx2numpy.convert_from_file('data/train-images-idx3-ubyte')/255
 X_train = X_train.reshape(X_train.shape[0], -1)

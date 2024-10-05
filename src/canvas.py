@@ -4,6 +4,7 @@ import numpy as np
 import train_network
 import os
 
+
 class Canvas:
     def __init__(self, app):
         self.app = app
@@ -20,8 +21,9 @@ class Canvas:
     def draw(self, event):
         x, y = event.x, event.y
         if 0 <= x < 280 and 0 <= y < 280:
-            self.canvas.create_oval(x, y, x + 10, y + 10, fill="black", width=2)
-            self.image.putpixel((x  // 10, y // 10), 255)
+            self.canvas.create_oval(
+                x, y, x + 10, y + 10, fill="black", width=2)
+            self.image.putpixel((x // 10, y // 10), 255)
 
             self.predict_image()
 
@@ -35,8 +37,10 @@ class Canvas:
         predict = train_network.test_network(data)
         predict_number = np.argmax(predict)
         predict_percentage = predict[np.argmax(predict)]
-        
-        print(f"Predicted '{predict_number}' {float(predict_percentage)*100:,.2f}%")
+
+        print(
+            f"Predicted '{predict_number}' {float(predict_percentage)*100:,.2f}%")
+
 
 os.system("train_network.py")
 app = tk.Tk()
