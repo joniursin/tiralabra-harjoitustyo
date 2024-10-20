@@ -4,6 +4,14 @@ from network import Network
 
 
 def test_network(test_data):
+    """Tests the neural network using test_data as input data.
+
+    Args:
+        test_data (np.array): Input data.
+
+    Returns:
+        np.array: Predictions for the input data.
+    """
     return nn.feedforward(test_data)
 
 
