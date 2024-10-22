@@ -36,8 +36,8 @@ class Canvas:
         """
         x, y = event.x, event.y
         self.canvas.create_oval(
-            x - 5, y - 5, x + 5, y + 5, fill="black", width=10)
-        self.image_draw.ellipse([x - 5, y - 5, x + 5, y + 5], fill="black")
+            x - 10, y - 10, x + 10, y + 10, fill="black", width=10)
+        self.image_draw.ellipse([x - 20, y - 20, x + 20, y + 20], fill="black")
         self.predict_image()
 
     def clear(self):
@@ -51,7 +51,8 @@ class Canvas:
     def predict_image(self):
         """Resizes the PIL image, turns it into np.array and sends it to the neural network for prediction.
         """
-        resize_image = ImageOps.invert(self.image.resize((28, 28)))
+        resize_image = ImageOps.invert(self.image.resize((20, 20)))
+        resize_image = ImageOps.expand(resize_image, border=4, fill=0)
         data = np.array(resize_image)/255.0
         data = np.array(data.reshape(-1, 1))
         predict = train_network.test_network(data)
