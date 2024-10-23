@@ -58,7 +58,7 @@ class Canvas:
         predict = train_network.test_network(data)
         predict_number = np.argmax(predict)
         predict_percentage = predict[np.argmax(predict)]
-        self.predict_label.config(text=f"Predicted '{predict_number}' ({float(predict_percentage)*100:,.2f}%)")
+        self.predict_label.config(text=f"Predicted '{predict_number}' ({float(predict_percentage.item())*100:,.2f}%)")
 
 app = tk.Tk()
 app_app = Canvas(app)
