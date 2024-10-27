@@ -14,7 +14,7 @@ poetry shell
 ```
 Ohjelma ajetaan komennolla
 ```bash
-python 3 canvas.py
+python3 canvas.py
 ```
 
 Ohjelma luo ja treenaa neuroverkon käyttäen MNIST dataa käsinpiirretyistä numeroista. 
