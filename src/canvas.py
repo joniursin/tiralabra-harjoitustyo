@@ -3,6 +3,7 @@ from PIL import Image, ImageDraw, ImageOps
 import numpy as np
 import train_network
 
+
 class Canvas:
     def __init__(self, app):
         """Creates canvas for drawing numbers
@@ -19,7 +20,8 @@ class Canvas:
         self.clear_button = tk.Button(app, text="clear", command=self.clear)
         self.clear_button.pack(side=tk.RIGHT)
 
-        self.predict_button = tk.Button(app, text="predict", command=self.predict_image)
+        self.predict_button = tk.Button(
+            app, text="predict", command=self.predict_image)
         self.predict_button.pack(side=tk.LEFT)
 
         self.predict_label = tk.Label(app, text="")
@@ -49,7 +51,8 @@ class Canvas:
         self.predict_label.config(text="")
 
     def predict_image(self):
-        """Resizes the PIL image, turns it into np.array and sends it to the neural network for prediction.
+        """Resizes the PIL image, 
+        turns it into np.array and sends it to the neural network for prediction.
         """
         resize_image = ImageOps.invert(self.image.resize((20, 20)))
         resize_image = ImageOps.expand(resize_image, border=4, fill=0)
@@ -58,8 +61,10 @@ class Canvas:
         predict = train_network.test_network(data)
         predict_number = np.argmax(predict)
         predict_percentage = predict[np.argmax(predict)]
-        self.predict_label.config(text=f"Predicted '{predict_number}' ({float(predict_percentage.item())*100:,.2f}%)")
+        self.predict_label.config(
+            text=f"Predicted '{predict_number}' ({float(predict_percentage.item())*100:,.2f}%)")
 
-app = tk.Tk()
-app_app = Canvas(app)
-app.mainloop()
+
+window = tk.Tk()
+canvas = Canvas(window)
+window.mainloop()
