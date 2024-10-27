@@ -5,12 +5,12 @@ git clone https://github.com/joniursin/tiralabra-harjoitustyo
  
 Tämän jälkeen asenna riippuvuudet ajamalla
 ```bash
-poetry install.
+poetry install
 ```
 
 Tämän jälkeen siirry shelliin ajamalla
 ```bash
-poetry shell.
+poetry shell
 ```
 Ohjelma ajetaan komennolla
 ```bash
